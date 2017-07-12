@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 
 	$.ajax({
-		url: 'http://pokeapi.co/api/v2/pokemon',
+		url: 'https://pokeapi.co/api/v2/pokemon',
 		type: 'GET',
 		dataType: 'json',
 		data: {'limit':'15'},
@@ -34,6 +34,10 @@ $(document).ready(function(){
 			document.write(el.name + "<br>");
 			llamarHabilidad(el.url)
 		})
+
+	})
+	.done(function(){
+		document.write("Este es el mensaje de despues de la llamada ajax" + "<br>")	
 	})
 	.fail(function() {
 		console.log("error");
